@@ -25,7 +25,7 @@ app.get('/broadcast/:room', function(req, res){
 });
 
 
-app.listen(80);
+app.listen(8081);
 
 
 var BinaryServer = require('binaryjs').BinaryServer;
