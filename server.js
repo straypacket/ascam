@@ -20,6 +20,10 @@ app.get('/view/:room', function(req, res){
   res.render('view', {room: req.params.room});
 });
 
+app.get('/view_big/:room', function(req, res){
+  res.render('view_big', {room: req.params.room});
+});
+
 app.get('/broadcast/:room', function(req, res){
   res.render('broadcast', {room: req.params.room});
 });
