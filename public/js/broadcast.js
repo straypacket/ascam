@@ -41,7 +41,7 @@ $(function(){
   navigator.webkitGetUserMedia({video: true}, function(stream) {
     video.src = window.webkitURL.createObjectURL(stream);
     localMediaStream = stream;
-    setInterval(frame, 120);
+    setInterval(frame, 33);
   }, fail);
   
   $("#startbtn").toggle(function(){
@@ -64,10 +64,11 @@ function frame() {
   if (localMediaStream) {
     ctx.drawImage(video, 0, 0, 320, 240);
     var data = ctx.getImageData(0, 0, 320, 240).data;
-    direct_draw(data);
+    //direct_draw(data);
     //asciiWorker.postMessage(data);
     // "image/webp" works in Chrome 18. In other browsers, this will fall back to image/png.
-    document.getElementById('screen_img').src = canvas.toDataURL('image/png');
+    document.getElementById('screen_img').src = canvas.toDataURL('image/jpeg');
+    direct_draw(canvas.toDataURL('image/jpeg'));
   }
 }
 
